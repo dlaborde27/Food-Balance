@@ -1,0 +1,43 @@
+.card {
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.flex-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 8px;
+}
+
+.flex-container > div:nth-child(2) {
+    align-items: center;
+}
+
+.card {
+    background-color: rgba(175, 248, 235, 0.31);
+}
+
+mat-card-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.7rem;
+}
+
+.clear-icon {
+    color: #BA0000; 
+    font-weight: 600; 
+    font-size: 1.8rem;
+    width: fit-content;
+    height: fit-content;
+}
+
+/*font-family: 'Roboto', sans-serif;
+font-family: 'Manrope', sans-serif;*/

@@ -1,0 +1,29 @@
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.3rem;
+    background-color: #037E00;
+    color: #fff;
+    font-family: 'Roboto';
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 7px;
+    border: none;
+    padding: 0.3rem 0.5rem;
+}
+
+#cached-icon {
+    font-size: 1.2rem;
+    width: fit-content;
+    height: fit-content;
+}
+
+#title {
+    font-family: 'Manrope';
+    font-size: 2rem;
+}
+
+header {
+    margin-bottom: 3%;
+}

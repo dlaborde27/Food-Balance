@@ -1,0 +1,9 @@
+#stadistics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#chart {
+    width: 45%;
+}
