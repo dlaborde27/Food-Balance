@@ -1,0 +1,49 @@
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+button{
+    background-color: #037E00;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+h1 {
+    padding-top: 1rem;
+    padding-bottom: 2.3rem;
+    text-align: center;
+}
+
+#title{
+    color: #000;
+    font-family: 'Manrope';
+    font-weight: 800;
+    font-size: 1.7rem;
+}
+
+.modal-content {
+    padding-bottom: 0;
+}
+
+#mymodal {
+    background-color:  #ffffff;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-icon {
+    font-weight: 400;
+    font-size: 1.6rem;
+    width: fit-content;
+    height: fit-content;
+}

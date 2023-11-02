@@ -7,6 +7,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DonutchartComponent } from './donutchart/donutchart.component';
@@ -17,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FoodaddbarComponent } from './foodaddbar/foodaddbar.component';
 import { MealcardsComponent } from './mealcards/mealcards.component';
 import { NewmealComponent } from './modals/newmeal/newmeal.component';
+import { ChangegoalComponent } from './modals/changegoal/changegoal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { NewmealComponent } from './modals/newmeal/newmeal.component';
     StadisticsComponent,
     FoodaddbarComponent,
     MealcardsComponent,
-    NewmealComponent
+    NewmealComponent,
+    ChangegoalComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { NewmealComponent } from './modals/newmeal/newmeal.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

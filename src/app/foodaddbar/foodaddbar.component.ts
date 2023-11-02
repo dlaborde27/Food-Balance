@@ -11,16 +11,13 @@ export class FoodaddbarComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(NewmealComponent, /*{
-      data: {name: this.name, animal: this.animal},
-    }*/
-      {height: '460px',
-      width: '320px',}
-    );
+    const dialogRef = this.dialog.open(NewmealComponent, {
+      height: '460px',
+      width: '320px'
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      //this.animal = result;
     });
   }
 }

@@ -1,18 +1,24 @@
 <table>
-    <tr>
-        <th>Today</th>
-        <th>x</th>
-      </tr>
-      <tr>
-        <th>Goal</th>
-        <td>111</td>
-      </tr>
-      <tr>
-        <th>Consumed</th>
-        <td>111</td>
-      </tr>
-      <tr>
-        <th>Total</th>
-        <td>111</td>
-      </tr>
+  <tr>
+    <th id="title">Today</th>
+    <td><mat-icon (click)="openDialog()" id="icon-create">create</mat-icon></td>
+  </tr>
+  <tr>
+    <th>Goal</th>
+    <td>{{goal}}</td>
+  </tr>
+  <tr>
+    <td colspan="2"><mat-divider id="divider"></mat-divider></td>
+  </tr>
+  <tr>
+    <th>Consumed</th>
+    <td>{{totalCalories}}</td>
+  </tr>
+  <tr>
+    <td colspan="2"><mat-divider id="divider"></mat-divider></td>
+  </tr>
+  <tr>
+    <th>Total</th>
+    <td>{{goal-totalCalories}}</td>
+  </tr>
 </table>

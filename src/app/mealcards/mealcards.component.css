@@ -1,6 +1,7 @@
 .card {
     border: 1px solid #000;
     border-radius: 10px;
+    margin-bottom: 1.4rem;
 }
 
 .flex-container > div {
@@ -21,7 +22,6 @@
 
 mat-card-title {
     font-family: 'Manrope', sans-serif;
-    font-weight: 800;
     font-size: 1.3rem;
 }
 
@@ -39,5 +39,10 @@ span {
     height: fit-content;
 }
 
-/*font-family: 'Roboto', sans-serif;
-font-family: 'Manrope', sans-serif;*/
+p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.22);
+    text-align: center;
+    margin: 50% 0;
+}

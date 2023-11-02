@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { Subscription } from 'rxjs';
+import { DataService } from '../providers/data.service';
 
 @Component({
   selector: 'app-donutchart',
   templateUrl: './donutchart.component.html',
   styleUrls: ['./donutchart.component.css']
 })
-export class DonutchartComponent implements OnInit {
+export class DonutchartComponent implements OnInit, OnDestroy {
+  private subscriptions: Subscription[] = [];
   public chart: any;
 
   private data: any = {
@@ -16,7 +19,7 @@ export class DonutchartComponent implements OnInit {
     ],
     datasets: [{
       label: 'Calories Stadistics',
-      data: [60,30],
+      data: [0,0],
       backgroundColor: [
         '#037E00',
         '#BCBCBC'
@@ -41,7 +44,19 @@ export class DonutchartComponent implements OnInit {
     options: this.options
   };
 
+  constructor(private dataProvider: DataService) {}
+
   ngOnInit(){
+    this.subscriptions.push(
+      this.dataProvider.getTotalCalories().subscribe(total => {
+        this.data.datasets[0].data[0] = total;
+        this.updateChart();
+      }),
+      this.dataProvider.getRemainingCalories().subscribe(remaining => {
+        this.data.datasets[0].data[1] = remaining;
+        this.updateChart();
+      })
+    );
     this.createChart();
     Chart.register({
       id: 'custom_center_text',
@@ -69,7 +84,14 @@ export class DonutchartComponent implements OnInit {
       }
     });
   }
-
+  ngOnDestroy() {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+  }
+  updateChart() {
+    if (this.chart) {
+      this.chart.update();
+    }
+  }
   createChart(){
     this.chart = new Chart("MyChart", this.config);
   }

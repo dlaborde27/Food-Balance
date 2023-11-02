@@ -1,0 +1,17 @@
+<div id="mymodal">
+    <div>
+        <h1 mat-dialog-title id="title">Change Goal</h1>
+        <div mat-dialog-content class="modal-content">
+            <mat-form-field>
+                <mat-label>Goal (Kcal)</mat-label>
+                <input matInput [(ngModel)]="data">
+            </mat-form-field>
+        </div>
+        <div mat-dialog-actions class="modal-actions">
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
+            <mat-icon id="add-icon">add</mat-icon>
+            Change
+        </button>
+        </div>
+    </div>
+</div>
