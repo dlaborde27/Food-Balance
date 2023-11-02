@@ -26,6 +26,10 @@ td {
     padding-bottom: 0.5rem;
 }
 
+#goal {
+    font-weight: 600;
+}
+
 #icon-create {
     font-size: 1rem;
     width: fit-content;
