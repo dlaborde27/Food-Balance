@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Meal } from 'src/app/intefaces/meal';
 
 @Component({
   selector: 'app-newmeal',
@@ -9,7 +10,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class NewmealComponent {
   constructor(
     public dialogRef: MatDialogRef<NewmealComponent>,
-    /*@Inject(MAT_DIALOG_DATA) public data: DialogData,*/
+    @Inject(MAT_DIALOG_DATA) public data: Meal
   ) {}
 
   onNoClick(): void {

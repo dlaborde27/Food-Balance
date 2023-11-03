@@ -4,19 +4,19 @@
         <div mat-dialog-content class="modal-content">
             <mat-form-field>
                 <mat-label>Nombre</mat-label>
-                <input matInput>
+                <input matInput [(ngModel)]="data.name">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Porción (gr)</mat-label>
-                <input matInput>
+                <input matInput [(ngModel)]="data.weight">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Kcal</mat-label>
-                <input matInput>
+                <input matInput [(ngModel)]="data.kcal">
             </mat-form-field>
         </div>
         <div mat-dialog-actions class="modal-actions">
-        <button mat-button cdkFocusInitial>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
             <mat-icon id="add-icon">add</mat-icon>
             Save
         </button>
