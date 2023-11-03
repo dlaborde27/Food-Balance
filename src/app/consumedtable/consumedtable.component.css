@@ -1,12 +1,12 @@
 table {
     font-family: 'Roboto';
     font-size: 0.7rem; 
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
 th {
     text-align: left;
-    padding-right: 1rem;
+    padding-right: 0.8rem;
     font-weight: 400;
 }
 
