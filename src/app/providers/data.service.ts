@@ -11,13 +11,10 @@ export class DataService {
   private totalCalories = new BehaviorSubject<number>(0);
   private remainingCalories = new BehaviorSubject<number>(2000);
   private goalSource = new BehaviorSubject<number>(2000);
-  currentGoal = this.goalSource.asObservable();
-
-
   private mealAddedSource = new Subject<Meal | null>();
   mealAdded$ = this.mealAddedSource.asObservable();
+  currentGoal = this.goalSource.asObservable();
   
-
   constructor(private http: HttpClient) { }
   changeGoal(goal: number) {
     this.goalSource.next(goal);
@@ -43,14 +40,15 @@ export class DataService {
     });
     return postRequest;
   }
-  /*deleteResponse(){
-    return this.http.delete(this.URL);
-  }*/
   deleteResponse(){
     const deleteRequest = this.http.delete(this.URL);
     deleteRequest.subscribe(result => {
       this.mealAddedSource.next(null);
     });
+    return deleteRequest;
+  }
+  deleteEachResponse(idmeal: string){
+    const deleteRequest = this.http.delete('https://food-balance-1b408-default-rtdb.firebaseio.com/meals/'+idmeal+'.json');
     return deleteRequest;
   }
 }

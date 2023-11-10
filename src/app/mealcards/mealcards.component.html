@@ -7,7 +7,7 @@
                     <span>{{dato.weight}} gr</span>
                 </div>
                 <div>
-                    <mat-icon class="clear-icon">clear</mat-icon>
+                    <mat-icon class="clear-icon" (click)="deleteData(dato.id)">clear</mat-icon>
                     <span>{{dato.kcal}} kcal</span>
                 </div>
             </div>

@@ -19,10 +19,6 @@ export class MealcardsComponent {
       this.updateData(goal);
     });
 
-    /*this.dataProvider.mealAdded$.subscribe((newMeal) => {
-      this.data.push(newMeal);
-      this.dataProvider.updateCalories(this.data, this.currentGoal);
-    });*/
     this.dataProvider.mealAdded$.subscribe((newMeal) => {
       if (newMeal === null) {
         this.data = [];
@@ -35,9 +31,18 @@ export class MealcardsComponent {
 
   updateData(goal: number) {
     this.dataProvider.getResponse().subscribe((response) => {
-      this.data = Object.values(response) as Meal[];
+      if (!response) return;
+      console.log(Object.keys(response));
+      this.data = Object.entries(response).map(([id, value]) => ({id, ...value})) as Meal[];
       this.dataProvider.updateCalories(this.data, goal);
       console.log(this.data);
+    });
+  }
+
+  deleteData(idMeal: string){
+    this.dataProvider.deleteEachResponse(idMeal).subscribe((response) => {
+      this.data = this.data.filter(meal => meal.id !== idMeal);
+      this.dataProvider.updateCalories(this.data, this.currentGoal);
     });
   }
 }
