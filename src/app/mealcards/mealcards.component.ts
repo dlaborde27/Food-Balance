@@ -41,6 +41,7 @@ export class MealcardsComponent {
 
   deleteData(idMeal: string){
     this.dataProvider.deleteEachResponse(idMeal).subscribe((response) => {
+      console.log('Ha sido eliminado el alimento con id' + idMeal);
       this.data = this.data.filter(meal => meal.id !== idMeal);
       this.dataProvider.updateCalories(this.data, this.currentGoal);
     });

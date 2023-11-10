@@ -36,6 +36,8 @@ export class DataService {
   postResponse(meal:Meal){
     const postRequest = this.http.post(this.URL,meal);
     postRequest.subscribe(result => {
+      console.log(result)
+      meal.id = Object.values(result) as unknown as string;
       this.mealAddedSource.next(meal);
     });
     return postRequest;
