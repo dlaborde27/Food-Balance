@@ -8,7 +8,7 @@ import { DataService } from '../providers/data.service';
 })
 export class HeaderComponent {
 
-  constructor(private dataProvider: DataService,) {}
+  constructor(private readonly dataProvider: DataService,) {}
 
   deleteMeals(){
     this.dataProvider.deleteResponse().subscribe((response) => {

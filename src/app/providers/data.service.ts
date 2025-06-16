@@ -7,15 +7,15 @@ import { BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private URL: string ='https://food-balance-1b408-default-rtdb.firebaseio.com/meals.json';
-  private totalCalories = new BehaviorSubject<number>(0);
-  private remainingCalories = new BehaviorSubject<number>(2000);
-  private goalSource = new BehaviorSubject<number>(2000);
-  private mealAddedSource = new Subject<Meal | null>();
+  private readonly URL: string ='https://food-balance-1b408-default-rtdb.firebaseio.com/meals.json';
+  private readonly totalCalories = new BehaviorSubject<number>(0);
+  private readonly remainingCalories = new BehaviorSubject<number>(2000);
+  private readonly goalSource = new BehaviorSubject<number>(2000);
+  private readonly mealAddedSource = new Subject<Meal | null>();
   mealAdded$ = this.mealAddedSource.asObservable();
   currentGoal = this.goalSource.asObservable();
   
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
   changeGoal(goal: number) {
     this.goalSource.next(goal);
   }

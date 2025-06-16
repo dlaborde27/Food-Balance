@@ -2,6 +2,7 @@
     border: 1px solid #000;
     border-radius: 10px;
     margin-bottom: 1.4rem;
+    background-color: rgba(175, 248, 235, 0.31);
 }
 
 .flex-container > div {
@@ -14,10 +15,6 @@
 
 .flex-container > div:nth-child(2) {
     align-items: center;
-}
-
-.card {
-    background-color: rgba(175, 248, 235, 0.31);
 }
 
 mat-card-title {
